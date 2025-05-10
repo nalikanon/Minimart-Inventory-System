@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
 const Login = () => {
@@ -7,11 +8,12 @@ const Login = () => {
     username: '',
     password: '',
   });
+  const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // TODO: Implement login logic
-    console.log('Login attempt:', formData);
+    navigate('/home');
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
